@@ -415,7 +415,6 @@ if $gentables==1 {
 		
 	///	rename child id
 	
-		ren childid st_id
 		
 	///	keep key vars
 	
