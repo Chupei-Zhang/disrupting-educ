@@ -383,7 +383,7 @@ if $gentables==1 {
 		
 	///	group by school-by-class combination
 	
-		egen group=group(schoolid class)
+		egen group=group(school class)
 	
 	///	standardize scores within each class
 	
@@ -419,7 +419,7 @@ if $gentables==1 {
 		
 	///	keep key vars
 	
-		keep st_id-schoolid z_* finalresult group 
+		keep st_id-school z_* finalresult group 
 			
 	/// merge with j-pal data wide
 
@@ -432,27 +432,27 @@ if $gentables==1 {
 	
 	///	run regressions
 	
-		xtreg z_hindi treat h_theta_mle1 i.schoolid i.class_m, i(strata) fe robust
+		xtreg z_hindi treat h_theta_mle1 i.school i.class_m, i(strata) fe robust
 		outreg2 using "$tables/table7.xls", label dec(3) ///
 		replace keep(treat h_theta_mle1) noaster
 		
-		xtreg z_math treat m_theta_mle1 i.schoolid i.class_m, i(strata) fe robust
+		xtreg z_math treat m_theta_mle1 i.school i.class_m, i(strata) fe robust
 		outreg2 using "$tables/table7.xls", label dec(3) ///
 		append keep(treat m_theta_mle1) noaster
 
-		xtreg z_science treat m_theta_mle1 h_theta_mle1 i.schoolid i.class_m, i(strata) fe robust
+		xtreg z_science treat m_theta_mle1 h_theta_mle1 i.school i.class_m, i(strata) fe robust
 		outreg2 using "$tables/table7.xls", label dec(3) ///
 		append keep(treat h_theta_mle1 m_theta_mle1) noaster
 
-		xtreg z_social treat m_theta_mle1 h_theta_mle1 i.schoolid i.class_m, i(strata) fe robust
+		xtreg z_social treat m_theta_mle1 h_theta_mle1 i.school i.class_m, i(strata) fe robust
 		outreg2 using "$tables/table7.xls", label dec(3) ///
 		append keep(treat h_theta_mle1 m_theta_mle1) noaster
 		
-		xtreg z_english treat m_theta_mle1 h_theta_mle1 i.schoolid i.class_m, i(strata) fe robust
+		xtreg z_english treat m_theta_mle1 h_theta_mle1 i.school i.class_m, i(strata) fe robust
 		outreg2 using "$tables/table7.xls", label dec(3) ///
 		append keep(treat h_theta_mle1 m_theta_mle1) noaster
 
-		xtreg z_aggregate treat m_theta_mle1 h_theta_mle1 i.schoolid i.class_m, i(strata) fe robust
+		xtreg z_aggregate treat m_theta_mle1 h_theta_mle1 i.school i.class_m, i(strata) fe robust
 		outreg2 using "$tables/table7.xls", label dec(3) ///
 		append keep(treat h_theta_mle1 m_theta_mle1) noaster
 
@@ -480,7 +480,7 @@ if $gentables==1 {
 	///	run regressions
 	
 		xtreg z_hindi treat terc_t2h terc_t3h d_h_terc2 ///
-		d_h_terc3 h_theta_mle1 i.schoolid i.class_, i(strata) fe robust
+		d_h_terc3 h_theta_mle1 i.school i.class_, i(strata) fe robust
 		outreg2 using "$tables/table8.xls", label less(1) replace keep(treat terc_t2h terc_t3h d_h_terc2 ///
 		d_h_terc3 h_theta_mle1) noaster
 		
@@ -489,7 +489,7 @@ if $gentables==1 {
 		test treat + terc_t3h=0
 
 		xtreg z_math treat terc_t2m terc_t3m d_m_terc2 ///
-		d_m_terc3 m_theta_mle1  i.schoolid i.class_, i(strata) fe robust
+		d_m_terc3 m_theta_mle1  i.school i.class_, i(strata) fe robust
 		outreg2 using "$tables/table8.xls", label less(1) append keep(treat terc_t2m terc_t3m d_m_terc2 ///
 		d_m_terc3 m_theta_mle1) noaster
 		
@@ -498,7 +498,7 @@ if $gentables==1 {
 		test treat + terc_t3m=0
 
 		xtreg z_science treat terc_t2h terc_t3h d_h_terc2 ///
-		d_h_terc3 h_theta_mle1  m_theta_mle1 i.schoolid i.class_, i(strata) fe robust
+		d_h_terc3 h_theta_mle1  m_theta_mle1 i.school i.class_, i(strata) fe robust
 		outreg2 using "$tables/table8.xls", label less(1) append keep(treat terc_t2h terc_t3h d_h_terc2 ///
 		d_h_terc3 h_theta_mle1 m_theta_mle1) noaster
 		test treat=0
@@ -506,7 +506,7 @@ if $gentables==1 {
 		test treat + terc_t3h=0
 
 		xtreg z_social treat terc_t2h terc_t3h d_h_terc2 ///
-		d_h_terc3 h_theta_mle1 m_theta_mle1 i.schoolid i.class_, i(strata) fe robust
+		d_h_terc3 h_theta_mle1 m_theta_mle1 i.school i.class_, i(strata) fe robust
 		outreg2 using "$tables/table8.xls", label less(1) append keep(treat terc_t2h terc_t3h d_h_terc2 ///
 		d_h_terc3 h_theta_mle1 m_theta_mle1) noaster
 		test treat=0
@@ -514,7 +514,7 @@ if $gentables==1 {
 		test treat + terc_t3h=0
 		
 		xtreg z_eng treat terc_t2h terc_t3h d_h_terc2 ///
-		d_h_terc3 h_theta_mle1 m_theta_mle1 i.schoolid i.class_, i(strata) fe robust
+		d_h_terc3 h_theta_mle1 m_theta_mle1 i.school i.class_, i(strata) fe robust
 		outreg2 using "$tables/table8.xls", label less(1) append keep(treat terc_t2h terc_t3h d_h_terc2 ///
 		d_h_terc3 h_theta_mle1 m_theta_mle1) noaster
 		test treat=0
@@ -523,7 +523,7 @@ if $gentables==1 {
 
 
 		xtreg z_aggreg treat terc_t2h terc_t3h d_h_terc2 ///
-		d_h_terc3 h_theta_mle1 m_theta_mle1 i.schoolid i.class_, i(strata) fe robust
+		d_h_terc3 h_theta_mle1 m_theta_mle1 i.school i.class_, i(strata) fe robust
 		outreg2 using "$tables/table8.xls", label less(1) append keep(treat terc_t2h terc_t3h d_h_terc2 ///
 		d_h_terc3 h_theta_mle1 m_theta_mle1) noaster
 		test treat + terc_t2h=0
@@ -602,7 +602,7 @@ if $gentables==1 {
 	
 	///	group by school-by-class combination
 
-		egen group=group(schoolid class)
+		egen group=group(school class)
 	
 	///	standardize scores within each class
 		 
@@ -1393,7 +1393,7 @@ if $gengraphs==1 {
 	
 	///	group by school-by-class combination
 
-		egen group=group(schoolid class)
+		egen group=group(school class)
 	
 	///	standardize scores within each class
 		 
