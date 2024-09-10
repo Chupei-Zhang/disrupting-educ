@@ -83,7 +83,7 @@ if $establishglobals==1 {
 		global	projects	${research}Projects/Ongoing/
 		global	ms			${projects}Mindspark_Study/
 	}
-	z	
+		
 ///	folder globals
 
 	global	bl			${mindspark}3_Data_processing/Baseline/
