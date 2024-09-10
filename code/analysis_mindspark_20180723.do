@@ -83,34 +83,39 @@ if $establishglobals==1 {
 		global	projects	${research}Projects/Ongoing/
 		global	ms			${projects}Mindspark_Study/
 	}
+	if c(username) == "tcejka" {
+		global	mindspark	"/Users/tcejka/Documents/repo/rep_disrupting_educ/"
+	}
 		
 ///	folder globals
 
-	global	bl			${mindspark}3_Data_processing/Baseline/
-	global	el			${mindspark}3_Data_processing/Endline/
-	global	ms			${mindspark}3_Data_processing/Mindspark/
-	global	sc			${mindspark}3_Data_processing/Schools/
-	global	hh			${mindspark}3_Data_processing/Household/
+	global data 		${mindspark}data/
+	global	bl			$data
+	global	el			$data
+	global	ms			$data
+	global	sc			$data
+	global	hh			$data
 	
-	global	graphs		${mindspark}4_Data_analysis/Graphs/
-	global	tables		${mindspark}4_Data_analysis/Tables/
+	global	graphs		${mindspark}out/graphs/
+	global	tables		${mindspark}out/tables/
 
 ///	subfolder globals
 
-	global	bl_temp		${bl}Temp/
-	global	bl_clean	${bl}Clean/
+	global	bl_temp		$$data
+	global	bl_clean	$data
+
+	global	el_temp		$data
+	global	el_clean	$data
+
 	
-	global	el_temp		${el}Temp/
-	global	el_clean	${el}Clean/
-	
-	global	ms_temp		${ms}Temp/
-	global	ms_clean	${ms}Clean/
-	
-	global	sc_temp		${sc}Temp/
-	global	sc_clean	${sc}Clean/
-	
-	global	hh_temp		${hh}Temp/
-	global	hh_clean	${hh}Clean/
+	global	ms_temp		$data
+	global	ms_clean	$data
+
+	global	sc_temp		$data
+	global	sc_clean	$data
+
+	global	hh_temp		$data
+	global	hh_clean	$data
 		
 }
 // ****************** GENERATE TABLES ****************** //
