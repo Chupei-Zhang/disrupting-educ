@@ -59,7 +59,7 @@ set seed 12345
 version 13.1
 
 global	establishglobals 	"1"
-global	gentables			"0"
+global	gentables			"1"
 global	gengraphs			"1"
 global	plotmathiccs		"0" 
 *ajg: takes a long time to run
