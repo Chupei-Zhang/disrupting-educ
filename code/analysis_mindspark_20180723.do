@@ -118,6 +118,17 @@ if $establishglobals==1 {
 	global	hh_clean	$data
 		
 }
+// installing necessary packages
+ssc install estout
+ssc install xtivreg2
+ssc install ivreg2
+ssc install ranktest
+ssc install leebounds
+net install "http://www.stata.com/users/vwiggins/grc1leg"
+ssc install cibar
+ssc install coefplot
+ssc install cmogram
+
 // ****************** GENERATE TABLES ****************** //
 
 if $gentables==1 {
