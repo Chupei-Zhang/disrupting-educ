@@ -119,15 +119,15 @@ if $establishglobals==1 {
 		
 }
 // installing necessary packages
-ssc install estout
-ssc install xtivreg2
-ssc install ivreg2
-ssc install ranktest
-ssc install leebounds
-net install "http://www.stata.com/users/vwiggins/grc1leg"
-ssc install cibar
-ssc install coefplot
-ssc install cmogram
+// ssc install estout
+// ssc install xtivreg2
+// ssc install ivreg2
+// ssc install ranktest
+// ssc install leebounds
+// net install "http://www.stata.com/users/vwiggins/grc1leg"
+// ssc install cibar
+// ssc install coefplot
+// ssc install cmogram
 
 // ****************** GENERATE TABLES ****************** //
 
@@ -136,7 +136,12 @@ if $gentables==1 {
 /// table 1: sample descriptives and balance on observables
 	
 	/// load j-pal data long
-
+		/*NOTE on paths:
+		This script specifies paths without using quotation marks. This is unfortunate
+		as it makes the script less portable -- if your home directory has a space in it,
+		then you need to quote the path.  So you would need to change ALL the paths below
+		to be quoted.  For example, change ${el_clean} to "${el_clean}".
+		*/
 		use ${el_clean}ms_blel_jpal_long, clear
 	
 	///	create table
