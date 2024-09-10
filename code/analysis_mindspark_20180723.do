@@ -796,7 +796,7 @@ if $gentables==1 {
 		
 	/// gen mean attendance by date
 	
-		bys date: egen mean_attend=mean(present)
+
 	
 	/// drop dates in which everyone was absent
 	
