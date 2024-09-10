@@ -55,8 +55,8 @@
 
 clear all
 set more off
-set seed 12345
 version 13.1
+set seed 12345
 
 global	establishglobals 	"1"
 global	gentables			"1"
