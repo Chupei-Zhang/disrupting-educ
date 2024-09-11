@@ -1,0 +1,15 @@
+		(1)	(2)	(3)	(4)
+VARIABLES	LABELS	Endline math score	Endline Hindi score	Endline math score	Endline Hindi score
+					
+treat	Treatment	0.37	0.23	0.38	0.24
+		(0.063)	(0.062)	(0.062)	(0.061)
+m_theta_mle1	Baseline math score	0.59		0.57	
+		(0.041)		(0.038)	
+h_theta_mle1	Baseline Hindi score		0.71		0.68
+			(0.040)		(0.037)
+Constant	Constant	0.32	0.18	0.32	0.17
+		(0.044)	(0.044)	(0.043)	(0.042)
+					
+Observations		535	535	535	535
+R-squared		0.405	0.487	0.454	0.535
+Robust standard errors in parentheses					

@@ -1,0 +1,20 @@
+		(1)	(2)	(3)	(4)	(5)	(6)
+VARIABLES	LABELS	Endline math score	Endline Hindi score	Endline math score	Endline Hindi score	Endline math score	Endline Hindi score
+							
+att_mat_tot	Days of math instruction	0.018		0.019		0.022	
+		(0.0029)		(0.0024)		(0.0047)	
+m_theta_mle1	Baseline math score	0.56		0.58		0.61	
+		(0.038)		(0.041)		(0.060)	
+att_hin_tot	Days of Hindi instruction		0.012		0.011		0.0084
+			(0.0031)		(0.0026)		(0.0050)
+h_theta_mle1	Baseline Hindi score		0.68		0.71		0.68
+			(0.036)		(0.039)		(0.052)
+Constant	Constant			0.31	0.18	0.22	0.24
+				(0.041)	(0.041)	(0.11)	(0.11)
+							
+Observations		535	537	535	537	264	265
+R-squared		0.432	0.478	0.428	0.495	0.445	0.446
+Number of strata		19	19				
+Angrist-Pischke F-statistic for weak instrument		1211	1093				
+Difference-in-Sargan statistic for exogeneity (p-value)		0.12	0.80				
+Robust standard errors in parentheses							
