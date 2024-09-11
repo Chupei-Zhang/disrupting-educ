@@ -1609,7 +1609,7 @@ if $gengraphs==1 {
 	
 		gr twoway (scatter math group if rct=="RCT", mcolor(red) msymbol(oh) ///
 		jitter(2))(scatter math group if rct!="RCT", mcolor(blue) msymbol(dh) ///
-		jitter(2)) if ms_id>8680, graphregion(fcolor(white) lcolor(white)) ///
+		jitter(2)), graphregion(fcolor(white) lcolor(white)) ///
 		legend(off) title("Dispersion in level of achievement") xtitle (Batch) ///
 		ytitle("Initial achievement level assessed by CAL system") ///
 		name(figa5b,replace) 
