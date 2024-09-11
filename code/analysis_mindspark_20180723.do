@@ -1238,18 +1238,12 @@ if $gengraphs==1 {
 	/// load ms levels data
 
 		use ${ms_clean}ms_levels, clear
+		isid st_id
 
-	///	drop duplicates
-
-		duplicates drop ms_id, force
-	
-	///	merge with ms roster
-	
-		mer 1:1 ms_id using ${ms_clean}ms_roster, nogen keep(match)
-	
+		
 	///	merge with ms math questions
 	
-		mer 1:m ms_id using ${ms_clean}ms_mathqs, nogen keep(match)
+		mer 1:m st_id using ${ms_clean}ms_mathqs, nogen keep(match)
 	
 	///	gen ms levels
 	
