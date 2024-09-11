@@ -1496,14 +1496,12 @@ if $gengraphs==1 {
 	/// load ms levels data
 
 		use ${ms_clean}ms_levels, clear
+		isid st_id
 
-		///	drop duplicates
-
-			duplicates drop ms_id, force
 
 		///	merge with ms math questions
 		
-			mer 1:m ms_id using ${ms_clean}ms_mathqs, nogen keep(match)
+			mer 1:m st_id using ${ms_clean}ms_mathqs, nogen keep(match)
 
 		///	restrict to observations before feb 5, 2016 
 			*ajg: endline was administered on feb 7, 2016
@@ -1554,14 +1552,13 @@ if $gengraphs==1 {
 	/// reload ms levels data
 
 		use ${ms_clean}ms_levels, clear
-		
+		isid st_id
 		///	drop duplicates
 
-			duplicates drop ms_id, force
 
 		///	merge with ms hindi questions
 		
-			mer 1:m ms_id using ${ms_clean}ms_hindiqs, nogen keep(match)
+			mer 1:m st_id using ${ms_clean}ms_hindiqs, nogen keep(match)
 
 		///	restrict to observations before feb 5, 2016 
 			*ajg: endline was administered on feb 7, 2016
