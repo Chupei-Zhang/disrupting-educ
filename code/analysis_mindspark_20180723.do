@@ -1432,7 +1432,7 @@ if $gengraphs==1 {
 
 	/// load sgi data
 	
-		use ${ms_clean}ms_ei_sgi, clear
+		use ${ms_clean}ms_ei, clear
 	
 	///	drop duplicates
 		
@@ -1453,10 +1453,7 @@ if $gengraphs==1 {
 	/// load ms levels data
 
 		use ${ms_clean}ms_levels, clear
-
-	///	drop duplicates
-
-		duplicates drop ms_id, force
+		isid st_id
 
 	/// merge w/j-pal data wide
 
