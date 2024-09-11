@@ -1189,7 +1189,7 @@ if $gengraphs==1 {
 
 	/// load sgi data
 	
-		use ${ms_clean}ms_ei_sgi, clear
+		use ${ms_clean}ms_ei, clear
 		
 	///	drop duplicates
 		
