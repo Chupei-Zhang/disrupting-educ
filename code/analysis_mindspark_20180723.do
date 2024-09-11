@@ -804,14 +804,12 @@ if $gentables==1 {
 		
 	///	drop duplicates
 		
-		duplicates drop ms_id, force
 		/* ajg: multiple obs per st_id due to individual attendance data,
 		dropping here because i only need aggregate attendance data */	
 	
 	///	keep key vars
 	
-		keep ms_id ms_center att_tot* st_id att_per ///
-		sgi_att_mat_tot sgi_att_hin_tot
+
 	
 	///	save tempfile
 	
