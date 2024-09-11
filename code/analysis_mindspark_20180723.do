@@ -924,7 +924,10 @@ if $gentables==1 {
 /// table a.8: lee bounds estimates of ITT effects
 
 	/// run regressions
-	
+	/* NOTE: Two issues:
+	1. This output is not saved anywhere. 
+	2. The set seed above doesn't reproduce the bootstrapped s.e.-s. 
+	*/
 		reg m_theta_mle2 m_theta_mle1, robust
 		predict m_res, res
 		leebounds m_res treat,vce(analytic) tight(ms_center1) cie
