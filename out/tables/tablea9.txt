@@ -1,0 +1,16 @@
+		(1)	(2)	(3)	(4)
+VARIABLES	LABELS	Math: EI item	Math: Non-EI item	Hindi: EI item	Hindi: Non-EI item
+					
+treat	Treatment	0.11	0.075	0.055	0.044
+		(0.013)	(0.011)	(0.017)	(0.011)
+m_theta_mle1	m_theta_mle1	0.092	0.096		
+		(0.011)	(0.0084)		
+h_theta_mle1	h_theta_mle1			0.14	0.12
+				(0.0093)	(0.0052)
+Constant	Constant	0.46	0.47	0.61	0.48
+		(0.0064)	(0.0055)	(0.0082)	(0.0056)
+					
+Observations		537	537	539	539
+R-squared		0.226	0.358	0.308	0.416
+Number of strata		19	19	19	19
+Robust standard errors in parentheses					
