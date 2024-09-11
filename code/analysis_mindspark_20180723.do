@@ -818,17 +818,12 @@ if $gentables==1 {
 
 	///	merge w/cal data
 	
-		mer 1:1 ms_id using ${ms_clean}ms_ei_cal
 		*ajg: 46 not matched (0 from using)
-		tab att_tot if _m!=3
 		*ajg: these are students with little or no attendance
 		
 	///	replace cal attendance data for these students
 	
-		foreach v in cal_att_mat_tot cal_att_hin_tot {
-			replace `v'=0 if _m!=3
-		}
-		drop _m
+
 	
 	///	save tempfile
 	
